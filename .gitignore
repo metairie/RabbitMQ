@@ -1,0 +1,10 @@
+.idea
+*.iml
+.vagrant
+target
+nbactions.xml
+nb-configuration.xml
+nbactions-release-profile.xml
+/.settings/
+/.project
+atlassian-ide-plugin.xml
