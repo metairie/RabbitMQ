@@ -45,8 +45,8 @@ launch several clients for testing
  java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Send  "topic" "nothing"
 launch several clients for testing
  java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Receive #
- java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Receive "*.black"
- java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Receive "white.*"
+ java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Receive "black.*"
+ java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.topic.Receive "*.white"
 
 # rpc
  java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.rpc.Send  
