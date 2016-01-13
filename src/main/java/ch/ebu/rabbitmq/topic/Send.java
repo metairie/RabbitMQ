@@ -5,6 +5,9 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 /**
@@ -14,7 +17,7 @@ public class Send {
     private static Connection c = null;
     private static Channel ch = null;
 
-    public static void main(String[] argv) throws InterruptedException, IOException {
+    public static void main(String[] argv) throws InterruptedException, IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
         Connect.init();
         c = Connect.getConnection();
         ch = Connect.getChannel(c);

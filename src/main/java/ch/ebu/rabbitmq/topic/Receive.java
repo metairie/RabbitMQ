@@ -4,6 +4,9 @@ import ch.ebu.common.Connect;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 /**
@@ -13,7 +16,7 @@ public class Receive {
     private static Connection c = null;
     private static Channel ch = null;
 
-    public static void main(String[] argv) throws IOException {
+    public static void main(String[] argv) throws IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
         Connect.init();
         c = Connect.getConnection();
         ch = Connect.getChannel(c);

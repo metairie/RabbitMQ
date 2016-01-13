@@ -1,14 +1,15 @@
 package ch.ebu.common;
 
-import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Properties;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -55,16 +56,17 @@ public class Connect {
         System.out.println(" END messaging. all connections are closed.");
     }
 
-    public static void init() {
-        try {
-            factory.setUri("");
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (KeyManagementException e) {
-            e.printStackTrace();
+    public static void init() throws IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
+        String uri = System.getProperty("uri");
+        if (uri == null || uri.equalsIgnoreCase("")) {
+            Properties properties = new Properties();
+            InputStream s = Connect.class.getClass().getResourceAsStream("/rabbitmq.properties");
+            properties.load(s);
+            s.close();
+            uri = properties.getProperty("uri");
+            System.setProperty("uri", uri);
         }
+        factory.setUri(uri);
         factory.setVirtualHost("neos");
         System.out.println(" START messaging");
     }

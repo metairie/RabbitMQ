@@ -7,6 +7,9 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.QueueingConsumer;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by metairie on 11-Jan-16.
@@ -15,7 +18,7 @@ public class Receive {
     private static Connection c = null;
     private static Channel ch = null;
 
-    public static void main(String[] argv) throws InterruptedException, IOException {
+    public static void main(String[] argv) throws InterruptedException, IOException, NoSuchAlgorithmException, KeyManagementException, URISyntaxException {
         Connect.init();
         c = Connect.getConnection();
         ch = Connect.getChannel(c);
