@@ -2,7 +2,7 @@
 It's a RabbitMQ tester, all cases could be launched like below (windows).
 
 Notice : 
- change the uri in the Connect class, for example your local RabbitMQ : amqp://guest:guest@localhost:5672/ (add  -Duri=amqp://guest:guest@qual-camel-routing1.ebu.ch:5672/)
+ change the uri in the Connect class, for example your local RabbitMQ (with guest:guest) : amqp://guest:guest@localhost:5672/ (add  -Duri=amqp://guest:guest@localhost:5672/)
  modify the file path D:/amqp-client-3.6.0.jar
  
 # simple
