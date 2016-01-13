@@ -57,7 +57,7 @@ public class Connect {
 
     public static void init() {
         try {
-            factory.setUri("amqp://guest:guest@qual-camel-routing1.ebu.ch:5672/");
+            factory.setUri("");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {
