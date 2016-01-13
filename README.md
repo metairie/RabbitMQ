@@ -1,8 +1,10 @@
 # RabbitMQ
 It's a RabbitMQ tester, all cases could be launched like below (windows).
 
-Notice : change the uri in the Connect class, for example your local RabbitMQ : amqp://guest:guest@localhost:5672/
-
+Notice : 
+ change the uri in the Connect class, for example your local RabbitMQ : amqp://guest:guest@localhost:5672/ (add  -Duri=amqp://guest:guest@qual-camel-routing1.ebu.ch:5672/)
+ modify the file path D:/amqp-client-3.6.0.jar
+ 
 # simple
  java -cp D:/amqp-client-3.6.0.jar;target/RabbitMQ-0.0.1.jar ch.ebu.rabbitmq.simple.Send  "HelloWorld"
 launch 2 clients for testing
